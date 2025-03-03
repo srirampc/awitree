@@ -5,33 +5,30 @@ var jstree = require('jstree')
 function render({ model, el }) {
 	console.log(el)
 	el.classList.add("awitree");
-	console.log('CList', jq(el).jstree())
-	jq(function () {
-		jq("#awitree").jstree({
-			'core': {
-				//check_callback: true,
-				//multiple: true,
-				//animation: true,
-				'data':
-					[
-						'Simple root node',
-						{
-							'text': 'Root node 2',
-							'state': {
-								'opened': true,
-								'selected': true
-							},
-							'children': [
-								{ 'text': 'Child 1' },
-								'Child 2'
-							]
-						}
-					]
-			},
-			//'plugins': ['wholerow']
-		})
+	jq(el).jstree({
+		'core': {
+			check_callback: true,
+			multiple: false,
+			animation: true,
+			'data':
+				[
+					'Simple root node',
+					{
+						'text': 'Root node 2',
+						'state': {
+							'opened': true,
+							'selected': true
+						},
+						'children': [
+							{ 'text': 'Child 1' },
+							'Child 2'
+						]
+					}
+				]
+		},
+		'plugins': ['wholerow', 'checkbox']
 	});
-	console.log('RTV')
+	console.log('RTV', jq(el).jstree(true))
 	// let rdiv = document.createElement("div");
 	// rdiv.innerHTML = `count is ${model.get("value")}`;
 	// rdiv.addEventListener("click", () => {
