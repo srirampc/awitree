@@ -1,0 +1,14 @@
+{
+	"scripts": {
+		"dev": "npm run build -- --sourcemap=inline --watch",
+		"build": "esbuild js/tree.js --minify --format=esm --bundle --outdir=src/awitree/static"
+	},
+	"dependencies": {
+		"jquery": "^3.7.1",
+		"jstree": "^3.3.17",
+		"lodash": "^4.17.21"
+	},
+	"devDependencies": {
+		"esbuild": "^0.24.0"
+	}
+}
