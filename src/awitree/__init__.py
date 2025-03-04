@@ -15,3 +15,4 @@ class Tree(anywidget.AnyWidget):
     _css = pathlib.Path(__file__).parent / "static" / "tree.css"
     name = traitlets.Unicode("Node").tag(sync=True)
     value = traitlets.Int(0).tag(sync=True)
+    tdata = traitlets.Dict(default_value={}).tag(sync=True)
