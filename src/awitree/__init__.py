@@ -14,5 +14,7 @@ class Tree(anywidget.AnyWidget):
     _esm = pathlib.Path(__file__).parent / "static" / "tree.js"
     _css = pathlib.Path(__file__).parent / "static" / "tree.css"
     name = traitlets.Unicode("Node").tag(sync=True)
-    value = traitlets.Int(0).tag(sync=True)
-    tdata = traitlets.Dict(default_value={}).tag(sync=True)
+    multiple = traitlets.Bool(False).tag(sync=True)
+    animation = traitlets.Int(0).tag(syn=True)
+    selected = traitlets.Dict({}).tag(sync=True)
+    tdata = traitlets.Dict({}).tag(sync=True)
