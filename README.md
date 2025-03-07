@@ -1,4 +1,4 @@
 # awitree
 
-AnyWidget port of [ipytree](https://github.com/jupyter-widgets-contrib/ipytree)
-
+A simple AnyWidget interface of [jstree](https://www.jstree.com/) that can be
+used both in Jupyter Notebook and Marimo
