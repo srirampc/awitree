@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.16"
+__generated_with = "0.11.17"
 app = marimo.App(width="full")
 
 
@@ -13,7 +13,7 @@ def _():
 
 @app.cell
 def _(awi, mo):
-    rtree = awi.Tree(tdata={
+    rtree = awi.Tree(data={
         "id": "0",
         "text":"Main Root",
         "state": {"open" : True},
@@ -36,16 +36,23 @@ def _(awi, mo):
 
 @app.cell
 def _(mo, motree, panel_map, rtree):
+    rt_selected = (
+        panel_map[rtree.selected_nodes[0]["id"]]
+        if (
+            rtree.selected_nodes and 
+            len(rtree.selected_nodes) > 0 and 
+            (rtree.selected_nodes[0]["id"] in panel_map)
+        ) else None
+    )
+
     vxst = mo.hstack(
         [
             motree,
-            panel_map[rtree.selected["id"]]
-            if rtree.selected and (rtree.selected["id"] in panel_map)
-            else mo.vstack([])
+            rt_selected  if rt_selected else mo.vstack([])
         ]
     )
-    vxst 
-    return (vxst,)
+    vxst
+    return rt_selected, vxst
 
 
 @app.cell

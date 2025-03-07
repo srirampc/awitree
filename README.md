@@ -1,4 +1,4 @@
 # awitree
 
-A simple AnyWidget interface of [jstree](https://www.jstree.com/) that can be
-used both in Jupyter Notebook and Marimo
+A simple interface to [jstree](https://www.jstree.com/) with AnyWidget that
+can be used both in Jupyter Notebook and Marimo

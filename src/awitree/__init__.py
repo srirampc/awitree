@@ -13,8 +13,11 @@ except importlib.metadata.PackageNotFoundError:
 class Tree(anywidget.AnyWidget):
     _esm = pathlib.Path(__file__).parent / "static" / "tree.js"
     _css = pathlib.Path(__file__).parent / "static" / "tree.css"
-    name = traitlets.Unicode("Node").tag(sync=True)
+    name = traitlets.Unicode("awitree.node").tag(sync=True)
     multiple = traitlets.Bool(False).tag(sync=True)
     animation = traitlets.Int(0).tag(syn=True)
-    selected = traitlets.Dict({}).tag(sync=True)
-    tdata = traitlets.Dict({}).tag(sync=True)
+    selected_nodes = traitlets.List(
+        trait=traitlets.Dict(),
+        default_value=[]
+    ).tag(sync=True)
+    data = traitlets.Dict(default_value={}).tag(sync=True)
