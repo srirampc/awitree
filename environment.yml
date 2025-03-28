@@ -1,0 +1,14 @@
+channels:
+  - conda-forge
+
+dependencies:
+  # Python version and pip
+  - python=3.10
+  - pip
+  - anywidget
+  - jupyter
+  - marimo
+
+  # PIP dependencies
+  - pip:
+      - git+https://github.com/srirampc/awitree.git
